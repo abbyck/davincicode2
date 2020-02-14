@@ -77,7 +77,6 @@
                 <th>Sl. No.</th>
                 <th>Team Name</th>
                 <th>Status</th>
-                <th>No. of tries</th>
                 <th>Total Time</th>
               </tr>
             </thead>
@@ -90,8 +89,7 @@
               <tr>
                 <td><%= i %></td>
                 <td><%= user[i].teamname %></td>
-                <td><%= user[i].started === true ? 'started' : 'not started' %></td>
-                <td><% if (user[i].started) { %><%= user[i].moves %> <% } else{ %> Nill <% } %></td>
+                <td><%= user[i].started === true ? 'Finished' : 'not started' %></td>
                 <td><% if (user[i].started) { %><%= user[i].time %> <% } else{ %> Nill <% } %> </td>
               </tr>
               <% } %>
