@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const morganBody = require('morgan-body');
+var fileupload = require("express-fileupload");
 
 // DB connection
 mongoose.connect(
@@ -23,9 +24,17 @@ mongoose.set('useCreateIndex', true);
 
 morganBody(app);
 
+
+
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(fileupload());
+
+// Engine
+app.set('view engine', 'ejs');
+// public
+app.use(express.static('public'));
 
 // CORS
 app.use((req, res, next) => {

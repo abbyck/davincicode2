@@ -1,6 +1,26 @@
 var router = require('express').Router();
 
+const User = require('../models/user');
+
 // split up route handling
+
+// LeaderBoard
+router.get('/', (req, res) => {
+    User.find({}, function(err, docs) {
+        if (!err) {
+            // console.log(docs.length);
+            res.render('lead', {
+                user: docs,
+            });
+            console.log(docs)
+            // res.send("ok")
+        } else {
+            console.log(err);
+        }
+    });
+});
+
+
 router.use('/user', require('./user'));
 router.use('/admin', require('./admin'));
 

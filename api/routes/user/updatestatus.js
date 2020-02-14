@@ -5,9 +5,9 @@ const checkAuth = require('../../middlewares/check-auth')
 
 
 router.post('/', checkAuth,(req, res, next) => {
-    User.findOneAndUpdate({ username: req.body.username }, { moves: req.body.moves, time: req.body.time }, (err, result) => {
+    User.findOneAndUpdate({ username: req.user.username }, { moves: req.body.moves, time: req.body.time }, (err, result) => {
         if (err) {
-            console.log(err);
+            console.log(err);7
             return res.status(500).json({
                 error: err,
             });

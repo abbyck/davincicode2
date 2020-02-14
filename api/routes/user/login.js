@@ -35,16 +35,27 @@ router.post('/', (req, res, next) => {
                                 expiresIn: '10h',
                             }
                         );
-                        
-                        return res.status(200).json({
-                            message: 'Authentication Successful',
-                            token: token,
+                        // Update login status
+                        User.findOneAndUpdate({username: req.body.username}, {started: true}, (err, docs) => {
+                            if (err) {
+                                return res.status(401).json({
+                                    message:
+                                        'Try again',
+                                });
+                            }
+                            return res.status(200).json({
+                                message: 'Authentication Successful',
+                                token: token,
+                            });
+                        })
+
+                    } else{
+                        return res.status(401).json({
+                            message:
+                                'Incorrect username or Password, \nTry again with correct credentials',
                         });
                     }
-                    return res.status(401).json({
-                        message:
-                            'Incorrect username or Password, \nTry again with correct credentials',
-                    });
+                    
                 }
             );
         })

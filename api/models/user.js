@@ -7,7 +7,7 @@ const UserSchema = mongoose.Schema({
     teamname: { type: String, required: true },
     password: { type: String, required: true },
     moves: { type: Number },
-    time: { type: Date },
+    time: { type: String },
     started: { type: Boolean}
 });
 
