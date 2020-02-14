@@ -12,7 +12,7 @@ module.exports = {
             max_memory_restart: '1G',
             env: {
                 NODE_ENV: 'development',
-                MONGO_PW: 'pass',
+                MONGO_PW: 'docodepass',
                 JWT_KEY: 'pass',
             },
             env_production: {

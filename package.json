@@ -5,7 +5,9 @@
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon server.js"
+        "start": "pm2 start server.js",
+        "dev": "nodemon server.js",
+        "stop": "pm2 delete 0"
     },
     "author": "Abhinav Krishna C K",
     "license": "MIT",
@@ -21,9 +23,13 @@
         "moment": "^2.24.0",
         "mongoose": "^5.4.6",
         "morgan": "^1.9.1",
-        "morgan-body": "^2.4.5"
+        "morgan-body": "^2.4.5",
+        "pm2": "^4.2.3"
     },
     "devDependencies": {
         "nodemon": "^1.18.9"
-    }
+    },
+    "engines": {
+        "node": "12.14.1"
+      }
 }
