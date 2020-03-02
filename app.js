@@ -53,6 +53,7 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use('/hello', require('./helloworld'));
 app.use('/', require('./api/routes'));
 
 module.exports = app;
