@@ -17,7 +17,7 @@
         "connect-multiparty": "^2.2.0",
         "ejs": "^3.0.1",
         "express": "^4.16.4",
-        "express-fileupload": "^1.1.6",
+        "express-fileupload": "^1.1.9",
         "jsonwebtoken": "^8.4.0",
         "lodash": "^4.17.11",
         "moment": "^2.24.0",
