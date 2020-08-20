@@ -12,7 +12,7 @@
     "author": "Abhinav Krishna C K",
     "license": "MIT",
     "dependencies": {
-        "bcrypt": "^3.0.3",
+        "bcrypt": "^5.0.0",
         "body-parser": "^1.18.3",
         "connect-multiparty": "^2.2.0",
         "ejs": "^3.0.1",
